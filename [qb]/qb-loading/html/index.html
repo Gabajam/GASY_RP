@@ -1,0 +1,189 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/c931ff6374.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+</head>
+<!-- <audio autoplay id="audio" src="../assets/audio/noncopyright.mp3"></audio> -->
+<script>
+    function openTab(evt, tabName) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("content-tab");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tab");
+        for (i = 0; i < x.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace("active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+    document.getElementById("general").style.display = "block";
+</script>
+
+<body>
+    <div id="loading-main" style="min-height: auto;">
+        <div id="debug" class="log log-top-right"></div>
+        <!-- Content  -->
+        <div class="big-top-buffer">
+
+            <div class="title-info">
+                <h4 class="welcome" style="color: #ff0266;">Tongasoa eto</h4>
+                <!-- <h1 class="welcome" style="color: #ffffff">Nosy Lava</h1> -->
+                <div class="span loader">
+                    <span class="m"> N</span>
+                    <span class="m"> O</span>
+                    <span class="m"> S</span>
+                    <span class="m"> Y</span>
+                    <span class="m"> &nbsp;</span>
+                    <span class="m"> L</span>
+                    <span class="m"> A</span>
+                    <span class="m"> V</span>
+                    <span class="m"> A</span>
+                </div>
+                <h4 class="welcome span loader" style="color: #ff0266;">GASY RP</h4>
+            </div>
+            <div class="spacer"></div>
+            <div class="spacer"></div>
+            <!-- <div class="spacer"></div> -->
+            <div class="pagination justify-content-center nav-indicators">
+                <button type="button" onclick="openTab(event, 'general')" class="btn tab btn-secondary">Général</button>
+                <button type="button" onclick="openTab(event, 'commandement')" class="btn tab btn-secondary">Les 10
+                    commandements</button>
+                <button type="button" onclick="openTab(event, 'staff')" class="btn tab btn-secondary">Staffs</button>
+            </div>
+            <div id="audio-player-container">
+                <div class="pause" id="audiobutton"></div>
+                <input type="range" id="volume-slider" oninput="thisVolume(this.value)" onchange="thisVolume(this.value)" min="0"
+                    step="1" max="100" value="100">
+            </div>
+            <div class="contentcard mx-auto">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+                    <div class="carousel-inner">
+                        <div id="general" class="content-tab">
+                            <h2 class=" ml-3 mt-3 " style="color:#ffffffde"></h2>
+                            <div class="spacer big-top-buffer"></div>
+                            <div class="spacer big-top-buffer"></div>
+                            <div class="container" id="logo"></div>
+                            <div class="defil">
+                                <marquee>
+                                    F1 : Roue d'action | F3 :DP Emote | G : Eteindre/Allumer moteur | ALT G -> Clic
+                                    droite :Interaction store | ² : Changer l'intensité de la voix (normal - whisper -
+                                    crier) L : Vérouiller/Déverrouiller votre vehicule | B : Pointer du doigt | X :
+                                    Mettre les
+                                    mains en l'air/Annulation emote
+                                </marquee>
+                            </div>
+                        </div>
+                        <div id="commandement" class="content-tab" style="display:none">
+                            <h2 class=" ml-3 mt-3 " style="color:#ffffffde">Les 10 commandements:</h2>
+                            <div id="law-NL" class="animateList">
+                                <ul>
+                                    <li class="fade-item">1. Peuple bien aimé de Nosy Lava, tu soutiendras l’île au
+                                        péril de ta vie, mourir pour sa patrie est une vertu et ouvre les portes de la
+                                        richesse avant et après la mort.</li>
+                                    <li class="fade-item">2. Du sens du respect du Général tu profiteras, tu n’ouvriras
+                                        pas la bouche et prendra pas parole tant que le Général ne l’a pas autorisé. Tu
+                                        mesureras tes expressions et tu l’appelleras toujours « Général suprême »</li>
+                                    <li class="fade-item">3. De la générosité du Général tu profiteras, en travaillant
+                                        haut et fort en retour, en respectant ses biens (cultures, animaux, véhicules,)
+                                        et en ayant son autorisation pour l’exploitation. Toute forme de non-respect
+                                        envers les biens du Général ne restera pas impunie</li>
+                                    <li class="fade-item">4. De la sagesse du Général tu profiteras, il n’existe qu’une
+                                        seule vérité, et c’est sa vérité à Lui.</li>
+                                    <li class="fade-item">5. De la sainteté du Général tu profiteras, ces jugements et
+                                        décisions sont juste et irrévocables ; il ne connait pas la trahison de
+                                        confiance, et sait le punir par la mort.</li>
+                                    <li class="fade-item">6. De la sécurité du Général tu profiteras, tu seras protégé
+                                        contre d’éventuel attaques ou catastrophes naturels ; tu paieras 20% de tes
+                                        biens monétaires en guise de cotisation pour l’armée</li>
+                                    <li class="fade-item">7. De l’hospitalité du Général tu profiteras, Tu seras guéri
+                                        par ses médecins si tu tombes malades, et tu revivras en bonne santé, en échange
+                                        d’argent et d’offrandes.</li>
+                                    <li class="fade-item">8. De la richesse du Général tu profiteras, le Général lutte
+                                        contre la pauvreté ainsi que les pauvres, si ton patrimoine est déclaré à moins
+                                        de 300 Ar, tu ne seras pas bénéfique à l’état et sera puni.</li>
+                                    <li class="fade-item">9. De la solidarité du Général tu profiteras, tu resteras
+                                        jusqu’au bout avec le Général, voir son ascension, tu ne quitteras pas l’île
+                                        sans la bénédiction du Général si tu veux vivre. </li>
+                                    <li class="fade-item">10. De la formation du Général tu profiteras, tout activité
+                                        sans exception sur l’île exigera une attestation au service militaire.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="staff" class="content-tab" style="display:none">
+                            <h2 class=" ml-3 mt-3 " style="color:#ffffffde"></h2>
+                            <div id="law-NL" class="staffList">
+                                <ul>
+                                    <li class="staff-item">ZazaTsyNariana</li>
+                                    <li class="staff-item">GABAJAM</li>
+                                    <li class="staff-item">Jok4iR</li>
+                                    <li class="staff-item">YURIX</li>
+                                    <li class="staff-item">RIO</li>
+                                    <li class="staff-item">Skin</li>
+                                    <li class="staff-item">Nikita Makarov</li>
+                                    <li class="staff-item">AndryRudi</li>
+                                    <li class="staff-item">Ratna</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container" id="discordDiv">
+                    <p><a href="https://web.facebook.com/groups/441430244353369">fb.group/NosyLava</a></p>
+                    <p><a href="https://discord.gg/TkjRV5mJhT">discord.gg/NosyLava</a></p>
+                    <p><a href="https://web.facebook.com/profile.php?id=100077185547424">fb.page/NosyLava</a></p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- End Content -->
+    </div>
+
+
+
+    <div id="background"></div>
+    </div>
+</body>
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<script>
+    const source = "../assets/audio/noncopyright.mp3"
+    const audio = document.createElement("audio");
+    const ppbutton = document.getElementById("audiobutton");
+    audio.autoplay = true;
+    audio.load()
+        audio.addEventListener("load", function () {
+            audio.play();
+        }, true);
+        audio.src = source;
+    ppbutton.addEventListener("click", playPause);
+    function playPause() {
+        if (audio.paused) {
+            audio.play();
+            ppbutton.classList.remove('play');
+            ppbutton.classList.add('pause');
+        }
+        else {
+            audio.pause();
+            ppbutton.classList.remove('pause');
+            ppbutton.classList.add('play');
+        }
+    }
+    const volumeSlider = document.getElementById('volume-slider');
+    function thisVolume(volume_value) {
+        volumeSlider.innerHTML = volume_value;
+        audio.volume = volume_value / 100;
+
+    }</script>
+
+</html>
